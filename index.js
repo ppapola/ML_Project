@@ -3,7 +3,7 @@ let audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
 async function loadModel() {
     const onnxPath = 'path/to/your/model.onnx';  // Replace with the path to your ONNX model
-    model = await onnx.load(onnxPath);
+    model = await onnx.loadModel(onnxPath);
 }
 
 async function generateAudio() {
