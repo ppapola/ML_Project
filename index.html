@@ -3,37 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GAN Sample Generator</title>
+    <title>ONNX Audio Synthesis</title>
+    <script src="https://cdn.jsdelivr.net/npm/onnxjs/dist/onnx.min.js"></script>
 </head>
 <body>
-    <h1>GAN Sample Generator</h1>
-    
-    <button onclick="generateSample()">Generate Sample</button>
-    
-    <script>
-        async function generateSample() {
-            // Generate a random latent vector (adjust as needed)
-            const latentVector = Array.from({ length: 100 }, () => Math.random());
+    <h1>ONNX Audio Synthesis</h1>
+    <input type="file" id="audioInput" accept=".wav" />
+    <button onclick="generateAudio()">Generate Audio</button>
+    <audio controls id="audioOutput"></audio>
 
-            try {
-                // Send a POST request to the Flask backend
-                const response = await fetch('/generate', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ latent_vector: latentVector }),
-                });
-
-                // Parse the response JSON
-                const result = await response.json();
-
-                // Display or process the generated sample as needed
-                console.log('Generated Sample:', result);
-            } catch (error) {
-                console.error('Error generating sample:', error);
-            }
-        }
-    </script>
+    <script src="index.js"></script>
 </body>
 </html>
