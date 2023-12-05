@@ -4,12 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ONNX Audio Synthesis</title>
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        #audioInput {
+            margin-bottom: 10px;
+        }
+
+        #generateButton {
+            margin-top: 20px;
+        }
+    </style>
     <script src="https://cdn.jsdelivr.net/npm/onnxjs/dist/onnxruntime-web.js"></script>
 </head>
 <body>
     <h1>ONNX Audio Synthesis</h1>
     <input type="file" id="audioInput" accept=".wav" />
-    <button onclick="generateAudio()">Generate Audio</button>
+    <button onclick="generateAudio()" id="generateButton">Generate Audio</button>
     <audio controls id="audioOutput"></audio>
 
     <script src="index.js"></script>
