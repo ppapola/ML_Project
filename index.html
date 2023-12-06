@@ -4,10 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ONNX Audio Synthesis</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        label {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
+        button {
+            background-color: #008CBA;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        audio {
+            width: 100%;
+            margin-top: 20px;
+        }
+    </style>
     <script src="https://cdn.jsdelivr.net/npm/onnxjs/dist/onnxruntime-web.js"></script>
 </head>
 <body>
     <h1>ONNX Audio Synthesis</h1>
+    <label for="audioInput">Choose a .wav file:</label>
     <input type="file" id="audioInput" accept=".wav" />
     <button onclick="generateAudio()">Generate Audio</button>
     <audio controls id="audioOutput"></audio>
