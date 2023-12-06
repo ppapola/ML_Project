@@ -30,5 +30,52 @@
     <audio controls id="audioOutput"></audio>
 
     <script src="index.js"></script>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONNX Audio Synthesis</title>
+</head>
+<body>
+
+<h1>ONNX Audio Synthesis</h1>
+<input type="file" id="audioInput" accept=".wav" />
+<button onclick="generateAudio()" id="generateButton">Generate Audio</button>
+<audio controls id="audioOutput"></audio>
+
+<script>
+    function generateAudio() {
+        // Get the input element
+        var inputElement = document.getElementById('audioInput');
+
+        // Check if a file is selected
+        if (inputElement.files.length > 0) {
+            // Assuming you have a function for GAN music generation
+            var generatedAudio = generateMusic(inputElement.files[0]);
+
+            // Update the audio element with the generated audio
+            var audioOutput = document.getElementById('audioOutput');
+            audioOutput.src = generatedAudio;
+            audioOutput.play();
+        } else {
+            alert("Please select a valid .wav file.");
+        }
+    }
+
+    // Replace this function with your actual GAN music generation logic
+    function generateMusic(inputFile) {
+        // Perform GAN music generation and return the generated audio URL
+        // Example: You might use a library like Tone.js or other audio processing libraries
+        // to generate music based on the input file.
+        // Return the URL of the generated audio.
+        // For now, return a placeholder URL.
+        return 'https://example.com/generated-audio.wav';
+    }
+</script>
+
+</body>
+</html>
+
 </body>
 </html>
